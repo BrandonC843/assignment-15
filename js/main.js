@@ -31,6 +31,31 @@ var selectedOrNot = document.querySelectorAll(".wish-list div")
 })
 // TASK 3 -- Move Item From List to List
 
-// TASK 4 -- Add Guest to List
+   var numbSelect = document.querySelectorAll('.point')
+   var totalCount = document.querySelector('.total-points')
 
+   forEach(numbSelect, function(buttonEl){
+      buttonEl.addEventListener('click', function(){
+         console.log('click');
+         var singleCount = totalCount.textContent
+         var totalOfNumbs = Number(singleCount) + Number(buttonEl.textContent)
+         totalCount.textContent = totalOfNumbs
+      })
+   })
+
+// TASK 4 -- Add Guest to List
+var bothListEl = document.querySelectorAll('#list-2-list li')
+var goodStandingList = document.querySelector('.good-standing-list')
+var badStandingList = document.querySelector('.probation-list')
+
+
+forEach (bothListEl, function(domElement, index){
+  domElement.addEventListener('click', function(evt){
+    if (domElement.parentNode === badStandingList){
+      goodStandingList.appendChild(domElement)
+   }else if (domElement.parentNode === goodStandingList){
+      badStandingList.appendChild(domElement)
+    }
+  })
+})
 // TASK 5 -- (Adventure Mode)-- Add + Remove Item From List
