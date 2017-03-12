@@ -36,9 +36,8 @@ var selectedOrNot = document.querySelectorAll(".wish-list div")
 
    forEach(numbSelect, function(buttonEl){
       buttonEl.addEventListener('click', function(){
-         console.log('click');
          var singleCount = totalCount.textContent
-         var totalOfNumbs = Number(singleCount) + Number(buttonEl.textContent)
+         var totalOfNumbs = parseInt(singleCount) + parseInt(buttonEl.textContent)
          totalCount.textContent = totalOfNumbs
       })
    })
